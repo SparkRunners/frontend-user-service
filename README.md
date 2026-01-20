@@ -75,12 +75,18 @@ Development server uses Vite proxy to avoid CORS issues:
 Build and run with Docker:
 
 ```bash
-# Build image
-docker build -t sparkrunner-user-web .
+# Using Docker Compose (recommended - includes all services)
+./docker-start.sh
 
-# Run container
+# Or manually
+docker-compose up --build
+
+# Single container
+docker build -t sparkrunner-user-web .
 docker run -p 5173:5173 sparkrunner-user-web
 ```
+
+See [DOCKER.md](DOCKER.md) for detailed Docker setup guide.
 
 For Docker Compose, use `.env.docker` configuration.
 
